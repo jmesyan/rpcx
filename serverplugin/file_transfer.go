@@ -8,9 +8,9 @@ import (
 	"sync"
 	"time"
 
-	"github.com/hashicorp/golang-lru"
-	"github.com/smallnest/rpcx/log"
-	"github.com/smallnest/rpcx/server"
+	lru "github.com/hashicorp/golang-lru"
+	"github.com/kudoochui/rpcx/log"
+	"github.com/kudoochui/rpcx/server"
 )
 
 var (

@@ -12,9 +12,9 @@ import (
 
 	"github.com/docker/libkv"
 	"github.com/docker/libkv/store"
+	"github.com/kudoochui/rpcx/log"
 	metrics "github.com/rcrowley/go-metrics"
 	etcd "github.com/smallnest/libkv-etcdv3-store"
-	"github.com/smallnest/rpcx/log"
 )
 
 func init() {
@@ -32,7 +32,7 @@ type EtcdV3RegisterPlugin struct {
 	Metrics  metrics.Registry
 	// Registered services
 	Services       []string
-	servicesLock	sync.RWMutex
+	servicesLock   sync.RWMutex
 	metasLock      sync.RWMutex
 	metas          map[string]string
 	UpdateInterval time.Duration

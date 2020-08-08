@@ -5,13 +5,13 @@ import (
 	"sync"
 	"time"
 
+	"github.com/kudoochui/rpcx/log"
+	"github.com/kudoochui/rpcx/util"
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/clients/naming_client"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/model"
 	"github.com/nacos-group/nacos-sdk-go/vo"
-	"github.com/smallnest/rpcx/log"
-	"github.com/smallnest/rpcx/util"
 )
 
 // NacosDiscovery is a nacos service discovery.

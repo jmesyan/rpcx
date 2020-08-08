@@ -14,8 +14,8 @@ import (
 	"github.com/docker/libkv/store/zookeeper"
 
 	"github.com/docker/libkv/store"
+	"github.com/kudoochui/rpcx/log"
 	metrics "github.com/rcrowley/go-metrics"
-	"github.com/smallnest/rpcx/log"
 )
 
 func init() {
@@ -33,7 +33,7 @@ type ZooKeeperRegisterPlugin struct {
 	Metrics  metrics.Registry
 	// Registered services
 	Services       []string
-	servicesLock	sync.RWMutex
+	servicesLock   sync.RWMutex
 	metasLock      sync.RWMutex
 	metas          map[string]string
 	UpdateInterval time.Duration

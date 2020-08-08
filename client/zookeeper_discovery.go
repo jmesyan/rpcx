@@ -8,7 +8,7 @@ import (
 	"github.com/docker/libkv"
 	"github.com/docker/libkv/store"
 	"github.com/docker/libkv/store/zookeeper"
-	"github.com/smallnest/rpcx/log"
+	"github.com/kudoochui/rpcx/log"
 )
 
 func init() {
@@ -18,12 +18,12 @@ func init() {
 // ZookeeperDiscovery is a zoopkeer service discovery.
 // It always returns the registered servers in zookeeper.
 type ZookeeperDiscovery struct {
-	basePath string
-	kv       store.Store
-	pairs    []*KVPair
-	pairsLock 	 sync.RWMutex
-	chans    []chan []*KVPair
-	mu       sync.Mutex
+	basePath  string
+	kv        store.Store
+	pairs     []*KVPair
+	pairsLock sync.RWMutex
+	chans     []chan []*KVPair
+	mu        sync.Mutex
 
 	// -1 means it always retry to watch until zookeeper is ok, 0 means no retry.
 	RetriesAfterWatchFailed int

@@ -7,8 +7,8 @@ import (
 
 	"github.com/docker/libkv"
 	"github.com/docker/libkv/store"
+	"github.com/kudoochui/rpcx/log"
 	etcd "github.com/smallnest/libkv-etcdv3-store"
-	"github.com/smallnest/rpcx/log"
 )
 
 func init() {
@@ -18,12 +18,12 @@ func init() {
 // EtcdV3Discovery is a etcd service discovery.
 // It always returns the registered servers in etcd.
 type EtcdV3Discovery struct {
-	basePath string
-	kv       store.Store
-	pairs    []*KVPair
-	pairsLock 	 sync.RWMutex
-	chans    []chan []*KVPair
-	mu       sync.Mutex
+	basePath  string
+	kv        store.Store
+	pairs     []*KVPair
+	pairsLock sync.RWMutex
+	chans     []chan []*KVPair
+	mu        sync.Mutex
 
 	// -1 means it always retry to watch until zookeeper is ok, 0 means no retry.
 	RetriesAfterWatchFailed int

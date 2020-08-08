@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"strings"
 
+	"github.com/kudoochui/rpcx/protocol"
+	"github.com/kudoochui/rpcx/share"
 	"github.com/rs/cors"
-	"github.com/smallnest/rpcx/protocol"
-	"github.com/smallnest/rpcx/share"
 )
 
 func (s *Server) jsonrpcHandler(w http.ResponseWriter, r *http.Request) {
